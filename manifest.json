@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube サムネ・タイトル置き換え",
+  "version": "1.0.0",
+  "description": "選んだYouTube動画のサムネイルとタイトルを好きなものに置き換え、リセットするまで記憶します。",
+  "permissions": ["storage", "unlimitedStorage", "activeTab"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "サムネ・タイトル置き換え"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

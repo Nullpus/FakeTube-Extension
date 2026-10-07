@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>サムネ・タイトル置き換え</h1>
+
+  <section>
+    <h2>1. 動画を選ぶ</h2>
+    <button id="pick" class="primary">動画を選択する</button>
+    <p class="hint">チャンネルページを開いた状態で押し、置き換えたい動画をクリックしてください。</p>
+    <div id="selected" class="selected hidden">
+      <img id="selThumb" alt="">
+      <div id="selTitle"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. 新しい内容</h2>
+    <label>サムネイル画像
+      <input type="file" id="file" accept="image/*">
+    </label>
+    <img id="preview" class="preview hidden" alt="">
+    <label>新しいタイトル
+      <input type="text" id="title" placeholder="置き換えるタイトル">
+    </label>
+  </section>
+
+  <section>
+    <h2>3. 置き換え</h2>
+    <button id="apply" class="primary" disabled>置き換える</button>
+    <div id="msg" class="msg"></div>
+  </section>
+
+  <section>
+    <h2>置き換え中の動画 <span id="count"></span></h2>
+    <ul id="list"></ul>
+    <button id="reset" class="danger">リセット(すべて元に戻す)</button>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
